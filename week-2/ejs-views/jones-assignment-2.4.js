@@ -1,9 +1,9 @@
 /*
 ==========================================
-; Title: Exercise 2.4 - EJS Views
+; Title: Assignment 2.4 - EJS Views
 ; Author: Kevin Jones
 ; Date: 7 January 2021
-; Description: This exercise creates a Node
+; Description: This assignment creates a Node
 ; server and returns the index page.
 ; ========================================
 */

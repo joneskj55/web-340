@@ -14,7 +14,7 @@ const http = require("http");
 const path = require("path");
 const logger = require("morgan");
 
-// Create Express application
+// Create/ initialize Express application
 const app = express();
 
 // Tell Express where the views are located
