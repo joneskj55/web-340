@@ -1,0 +1,12 @@
+{
+  "name": "json-api",
+  "author": "Kevin Jones",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node jones-exercise-4.2.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
