@@ -1,0 +1,19 @@
+<!--
+==========================================
+; Title: Exercise 5.2 - EJS Templates
+; Author: Kevin Jones
+; Date: 26 January 2021
+; Description: This is the index page for
+; exercise 5.2
+; ========================================
+-->
+
+<div>
+  <br /><br />
+  <h2>Name List</h2>
+  <% for (var i = 0; i < names.length; i++) { %> <% if (names.length > 0) { %>
+  <div>
+    <strong><%= names[i] %></strong>
+  </div>
+  <% } %> <% } %>
+</div>
