@@ -1,9 +1,9 @@
 /*
 ==========================================
-; Title: Assign. 4.2 - JSON APIs
+; Title: Exercise 4.2 - JSON APIs
 ; Author: Kevin Jones
 ; Date: 19 January 2021
-; Description: This assignment displays
+; Description: This exercise displays
 ; how to return JSON from a Node.js server.
 ; ========================================
 */

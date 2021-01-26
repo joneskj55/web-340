@@ -1,9 +1,9 @@
 /*
 ==========================================
-; Title: Assign. 4.3 - HTTP Status Codes
+; Title: Exercise 4.3 - HTTP Status Codes
 ; Author: Kevin Jones
 ; Date: 19 January 2021
-; Description: This assignment displays
+; Description: This exercise displays
 ; how to create HTTP status codes in Node.js.
 ; ========================================
 */
