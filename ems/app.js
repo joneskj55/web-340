@@ -1,10 +1,10 @@
 /*
 ==========================================
-; Title: Assignment 5.4 - EMS
+; Title: Assignment 5.4 - EMS Milestone 1
 ; Author: Kevin Jones
 ; Date: 26 January 2021
-; Description: This exercise is Milestone
-; 1 for Employee Records application
+; Description: This exercise is UI Development
+; for the Employee Records application
 ; ========================================
 */
 
