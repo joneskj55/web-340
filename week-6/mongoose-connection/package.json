@@ -1,0 +1,14 @@
+{
+  "name": "mongoose-connection",
+  "author": "Kevin Jones",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node jones-exercise-6.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.11.14",
+    "morgan": "^1.10.0"
+  }
+}
