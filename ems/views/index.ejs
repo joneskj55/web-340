@@ -5,15 +5,78 @@
   <body class="flex flex-col min-h-screen">
     <%- include('navbar') %>
     <main class="flex-grow">
-      <h1 class="text-7xl" style="text-align: center">
+      <h1 class="text-7xl font-bold" style="text-align: center">
         Employee Management System
       </h1>
       <br />
-      <p class="text-3xl" style="text-align: center">
-        Manage all of your employee records from this page.<br />
-        Enter a new employee.<br />
-        View a list of all employees. <br />View data on a specific employee.
+      <p class="text-3xl font-light mb-20" style="text-align: center">
+        Manage, enter, and view all employee information from this page.
       </p>
+      <div class="container mx-auto px-6 pt-10">
+        <div class="sm:flex sm:mt-8">
+          <div
+            class="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-between"
+          >
+            <div class="flex flex-col">
+              <span class="font-bold text-gray-700 mb-2 text-2xl"
+                >Manage a specific employee</span
+              >
+              <span class="mb-2"
+                ><p>
+                  View and edit current employee data.<br />
+                  Check for various forms of information<br />
+                  from here.
+                </p></span
+              >
+              <span>
+                <button
+                  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                >
+                  Manage
+                </button>
+              </span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-bold text-gray-700 mb-2 text-2xl"
+                >Enter a new employee</span
+              >
+              <span class="mb-2"
+                ><p>
+                  Add a new employee.<br />
+                  Another sentence about adding stuff.<br />
+                  And yet, a third sentence.
+                </p></span
+              >
+              <span>
+                <button
+                  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                >
+                  Enter
+                </button>
+              </span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-bold text-gray-700 mb-2 text-2xl"
+                >View a list of all employees</span
+              >
+              <span class="mb-2"
+                ><p>
+                  View a list of all current employees.<br />
+                  Another sentence about lists.<br />
+                  And a third to even it out.
+                </p></span
+              >
+              <span>
+                <button
+                  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                >
+                  View
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
   <%- include('footer') %> <%- include('scripts') %>
