@@ -2,17 +2,19 @@
 <html lang="en">
   <%- include('header') %>
 
-  <body>
-    <%- include('navbar') %><br />
-    <h1 class="text-7xl" style="text-align: center">
-      Employee Management System
-    </h1>
-    <br />
-    <p class="text-3xl" style="text-align: center">
-      Manage all of your employee records from this page.<br />
-      Enter a new employee.<br />
-      View a list of all employees. <br />View data on a specific employee.
-    </p>
+  <body class="flex flex-col min-h-screen">
+    <%- include('navbar') %>
+    <main class="flex-grow">
+      <h1 class="text-7xl" style="text-align: center">
+        Employee Management System
+      </h1>
+      <br />
+      <p class="text-3xl" style="text-align: center">
+        Manage all of your employee records from this page.<br />
+        Enter a new employee.<br />
+        View a list of all employees. <br />View data on a specific employee.
+      </p>
+    </main>
   </body>
   <%- include('footer') %> <%- include('scripts') %>
 </html>
