@@ -33,6 +33,27 @@ app.get("/", function (request, response) {
   });
 });
 
+// Handle the response to the view page
+app.get("/view", function (request, response) {
+  response.render("view", {
+    title: "Manage",
+  });
+});
+
+// Handle the response to the new page
+app.get("/new", function (request, response) {
+  response.render("new", {
+    title: "Add Employee",
+  });
+});
+
+// Handle the response to the list page
+app.get("/list", function (request, response) {
+  response.render("list", {
+    title: "View Employees",
+  });
+});
+
 // Create server and listen on port 3000
 http.createServer(app).listen(3000, function () {
   console.log("Application started on port 3000!");
