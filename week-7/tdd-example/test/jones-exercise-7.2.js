@@ -11,7 +11,7 @@
 // Include the assert module
 const assert = require("assert");
 
-// Function that splits a string of comma delimited values into an array
+// Test function
 describe("String#split", function () {
   it("should return an array of fruits", function () {
     assert(Array.isArray("Apple,Orange,Mango".split(",")));

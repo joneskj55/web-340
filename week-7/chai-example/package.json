@@ -1,0 +1,14 @@
+{
+  "name": "chai-example",
+  "author": "Kevin Jones",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node jones-exercise-7.3",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "chai": "^4.3.0",
+    "mocha": "^8.2.1"
+  }
+}
