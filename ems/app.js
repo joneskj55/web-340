@@ -1,8 +1,8 @@
 /*
 ==========================================
-; Title: Assignment 5.4 - EMS Milestone 1
+; Title: Employee Management Assignment
 ; Author: Kevin Jones
-; Date: 26 January 2021
+; Date: 26 January 2021 - Until complete
 ; Description: This exercise is UI Development
 ; for the Employee Records application
 ; ========================================
