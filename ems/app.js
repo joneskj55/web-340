@@ -13,9 +13,30 @@ const express = require("express");
 const http = require("http");
 const path = require("path");
 const logger = require("morgan");
+const mongoose = require("mongoose");
+const Employee = require("./models/employee");
+
+// Connect to MongoDB
+var mongoDB = "mongodb+srv://fakeurl";
+mongoose.connect(mongoDB, {
+  useMongoClient: true,
+});
+
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+db.on("error", console.error.bind(console, "MongoDB connected error: "));
+db.once("open", function () {
+  console.log("Application connected to mLab MongoDB instance");
+});
 
 // Initialize app
 const app = express();
+
+// Employee model
+const employee = new Employee({
+  firstName: "Steve",
+  lastName: "Stevenson",
+});
 
 // Tell Express where the views are
 app.set("views", path.resolve(__dirname, "views"));
