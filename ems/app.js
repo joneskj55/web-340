@@ -14,6 +14,7 @@ const http = require("http");
 const path = require("path");
 const logger = require("morgan");
 const mongoose = require("mongoose");
+const helmet = require("helmet");
 const Employee = require("./models/employee");
 
 // Connect to MongoDB
@@ -38,6 +39,9 @@ const employee = new Employee({
   lastName: "Stevenson",
 });
 
+// Use statements
+app.use(helmet.xssFilter());
+
 // Tell Express where the views are
 app.set("views", path.resolve(__dirname, "views"));
 
@@ -51,6 +55,7 @@ app.use(logger("short"));
 app.get("/", function (request, response) {
   response.render("index", {
     title: "Home Page",
+    message: "XSS Prevention Example",
   });
 });
 
