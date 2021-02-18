@@ -8,6 +8,25 @@
     <p class="text-3xl font-light mb-20" style="text-align: center">
       Add a new employee from this page.
     </p>
+    <h2>-- Fruit Entry Page --</h2>
+    <form method="post" action="/process">
+      <div class="form-group">
+        <label for="txtName">Name:</label>
+        <input type="text" class="form-control" id="txtName" name="txtName" />
+      </div>
+
+      <div>
+        <!-- CSRF token -->
+        <input name="_csrf" value="<%= csrfToken %>" type="hidden" />
+
+        <button
+          type="submit"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
   </body>
   <%- include('footer') %> <%- include('scripts') %>
 </html>

@@ -15,7 +15,13 @@ const path = require("path");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const helmet = require("helmet");
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const csrf = require("csurf");
 const Employee = require("./models/employee");
+
+// Setup csrf protection
+const csrfProtection = csrf({ cookie: true });
 
 // Connect to MongoDB
 var mongoDB = "mongodb+srv://fakeurl";
@@ -41,6 +47,16 @@ const employee = new Employee({
 
 // Use statements
 app.use(helmet.xssFilter());
+app.use(logger("short"));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(csrfProtection);
+app.use(function (request, response, next) {
+  const token = request.csrfToken();
+  response.cookie("XSRF-TOKEN", token);
+  response.locals.csrfToken = token;
+  next();
+});
 
 // Tell Express where the views are
 app.set("views", path.resolve(__dirname, "views"));
@@ -48,8 +64,8 @@ app.set("views", path.resolve(__dirname, "views"));
 // Tell Express to use EJS
 app.set("view engine", "ejs");
 
-// Log with Morgan's short format
-app.use(logger("short"));
+// Set the port
+app.set("port", process.env.PORT || 3000);
 
 // Handle the response to the index page
 app.get("/", function (request, response) {
@@ -80,7 +96,13 @@ app.get("/list", function (request, response) {
   });
 });
 
+// Post request for form
+app.post("/process", function (request, response) {
+  console.log(request.body.txtName);
+  response.redirect("/");
+});
+
 // Create server and listen on port 3000
-http.createServer(app).listen(3000, function () {
+http.createServer(app).listen(app.get("port"), function () {
   console.log("Application started on port 3000!");
 });
