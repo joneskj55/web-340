@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('header') %>
-  <body>
+  <body style="text-align: center">
     <%- include('navbar') %>
     <h1 class="text-7xl font-bold" style="text-align: center">
       View Employees
@@ -10,6 +10,35 @@
     <p class="text-3xl font-light mb-20" style="text-align: center">
       View a list of all employees from this page.
     </p>
+    <% if(employees.length) {%>
+    <h2>--Employee Listing--</h2>
+    <br />
+    <a href="/new"
+      ><button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Add New
+      </button></a
+    ><br /><br />
+
+    <table class="min-w-full table-auto">
+      <thead>
+        <tr>
+          <th class="px-16 py-2">First Name</th>
+          <th class="px-16 py-2">Last Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% employees.forEach(function (entry) {%>
+        <tr>
+          <td><%= entry.firstName %></td>
+          <td><%= entry.lastName %></td>
+        </tr>
+      </tbody>
+      <% }) %>
+    </table>
+    <%} else { %> No entries! <a href="/new">Add one!</a>
+    <% } %>
   </body>
   <%- include('footer') %> <%- include('scripts') %>
 </html>

@@ -24,7 +24,7 @@ const Employee = require("./models/employee");
 const csrfProtection = csrf({ cookie: true });
 
 // Connect to MongoDB
-var mongoDB = "mongodb+srv://fakeurl";
+var mongoDB = "mongodb://localhost:3333653/testerson";
 mongoose.connect(mongoDB, {
   useMongoClient: true,
 });
@@ -38,12 +38,6 @@ db.once("open", function () {
 
 // Initialize app
 const app = express();
-
-// Employee model
-const employee = new Employee({
-  firstName: "Steve",
-  lastName: "Stevenson",
-});
 
 // Use statements
 app.use(helmet.xssFilter());
@@ -91,15 +85,44 @@ app.get("/new", function (request, response) {
 
 // Handle the response to the list page
 app.get("/list", function (request, response) {
-  response.render("list", {
-    title: "View Employees",
+  Employee.find({}, function (error, employees) {
+    if (error) throw error;
+    if (employees.length > 0)
+      response.render("list", {
+        title: "Employee List",
+        employees: employees,
+      });
   });
 });
 
 // Post request for form
 app.post("/process", function (request, response) {
-  console.log(request.body.txtName);
-  response.redirect("/");
+  //console.log(request.body.txtName);
+  if (!request.body.firstName && !request.body.lastName) {
+    response.status(400).send("Entries must have a name");
+    return;
+  }
+
+  // get the request's form data
+  const employeeName = request.body.firstName + request.body.lastName;
+  console.log(employeeName);
+
+  // create an employee model
+  const employee = new Employee({
+    firstName: request.body.firstName,
+    lastName: request.body.lastName,
+  });
+
+  // save
+  employee.save(function (err) {
+    if (err) {
+      console.log(err);
+      throw err;
+    } else {
+      console.log(employeeName + " saved successfully!");
+      response.redirect("/");
+    }
+  });
 });
 
 // Create server and listen on port 3000

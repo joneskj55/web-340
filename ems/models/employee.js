@@ -18,8 +18,5 @@ let employeeSchema = new Schema({
   lastName: { type: String, required: true },
 });
 
-// Define the model
-let Employee = mongoose.model("Employee", employeeSchema);
-
-// Export the model
-module.exports = Employee;
+// Export the model; Define the model
+module.exports = mongoose.model("Employee", employeeSchema);
