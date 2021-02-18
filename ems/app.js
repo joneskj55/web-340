@@ -24,7 +24,7 @@ const Employee = require("./models/employee");
 const csrfProtection = csrf({ cookie: true });
 
 // Connect to MongoDB
-var mongoDB = "mongodb://localhost:3333653/testerson";
+var mongoDB = "mongodb://localhost:27017/test";
 mongoose.connect(mongoDB, {
   useMongoClient: true,
 });
