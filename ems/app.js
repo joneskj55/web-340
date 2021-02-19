@@ -59,7 +59,7 @@ app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
 
 // Set the port
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 8080);
 
 // Handle the response to the index page
 app.get("/", function (request, response) {
@@ -138,7 +138,7 @@ app.get("/view/:queryName", function (req, res) {
   });
 });
 
-// Create server and listen on port 3000
+// Create server and listen on specified port
 http.createServer(app).listen(app.get("port"), function () {
-  console.log("Application started on port 3000!");
+  console.log("Application started on port " + app.get("port"));
 });
