@@ -21,7 +21,7 @@
       </button></a
     ><br /><br />
 
-    <table class="min-w-full table-auto">
+    <table class="min-w-full table-auto>
       <thead>
         <tr>
           <th class="px-16 py-2">First Name</th>
@@ -33,6 +33,7 @@
         <tr class="border-solid border-2">
           <td><%= entry.firstName %></td>
           <td><%= entry.lastName %></td>
+          <td><a href="/view/<%= entry.lastName %>">VIEW</a></td>
         </tr>
       </tbody>
       <% }) %>

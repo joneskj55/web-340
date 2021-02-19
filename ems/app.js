@@ -69,13 +69,6 @@ app.get("/", function (request, response) {
   });
 });
 
-// Handle the response to the view page
-app.get("/view", function (request, response) {
-  response.render("view", {
-    title: "Manage",
-  });
-});
-
 // Handle the response to the new page
 app.get("/new", function (request, response) {
   response.render("new", {
@@ -121,6 +114,26 @@ app.post("/process", function (request, response) {
     } else {
       console.log(employeeName + " saved successfully!");
       response.redirect("/");
+    }
+  });
+});
+
+// Display one employee's information
+app.get("/view/:queryName", function (req, res) {
+  var queryName = req.params["queryName"];
+  Employee.find({ lastName: queryName }, function (error, employees) {
+    if (error) {
+      console.log(error);
+      throw error;
+    } else {
+      console.log(employees);
+
+      if (employees.length > 0) {
+        res.render("view", {
+          title: "Manage",
+          employee: employees,
+        });
+      }
     }
   });
 });
