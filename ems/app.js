@@ -59,7 +59,7 @@ app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
 
 // Set the port
-app.set("port", process.env.PORT || 8080);
+app.set("port", process.env.PORT || 3000);
 
 // Handle the response to the index page
 app.get("/", function (request, response) {
