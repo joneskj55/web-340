@@ -1,45 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('header') %>
-  <body style="text-align: center">
+  <body>
     <%- include('navbar') %>
     <h1 class="text-7xl font-bold" style="text-align: center">
       View Employees
     </h1>
     <br />
-    <p class="text-3xl font-light mb-20" style="text-align: center">
+    <p class="text-3xl font-light mb-10" style="text-align: center">
       View a list of all employees from this page.
     </p>
-    <% if(employees.length) {%>
-
-    <br />
-    <a href="/new"
-      ><button
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    <div style="text-align: center">
+      <a href="/new"
+        ><button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Add New
+        </button></a
       >
-        Add New
-      </button></a
-    ><br /><br />
-
-    <table class="min-w-full table-auto mb-40">
-      <thead>
-        <tr>
-          <th class="px-16 py-2">First Name</th>
-          <th class="px-16 py-2">Last Name</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% employees.forEach(function (entry) {%>
-        <tr class="border-solid border-2">
-          <td><%= entry.firstName %></td>
-          <td><%= entry.lastName %></td>
-          <td><a href="/view/<%= entry.lastName %>">VIEW</a></td>
-        </tr>
-      </tbody>
-      <% }) %>
-    </table>
-    <%} else { %> No entries! <a href="/new">Add one!</a>
-    <% } %>
+    </div>
+    <br />
+    <div class="flex flex-col w-1/2 mx-auto h-full p-4">
+      <div class="rounded overflow-hidden border">
+        <% if(employees.length) {%>
+        <table class="w-full">
+          <thead>
+            <tr class="bg-gray-200">
+              <th class="p-4 text-black-700 text-left">First Name</th>
+              <th class="p-4 text-black-700 text-left">Last Name</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% employees.forEach(function (entry) {%>
+            <tr class="border py-1">
+              <td class="p-4"><%= entry.firstName %></td>
+              <td class="p-4"><%= entry.lastName %></td>
+              <td class="px-4">
+                <div
+                  class="flex flex-col shadow-lg border-solid border-4 border-light-blue-500 bg-gray-200 items-center items-justify-center rounded-full w-8 h-8"
+                >
+                  <a
+                    href="/view/<%= entry.lastName %>"
+                    class="text-blue-700 hover:text-blue-500"
+                  >
+                    <svg
+                      class="w-full"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+          <% }) %>
+        </table>
+        <%} else { %> No entries! <a href="/new">Add one!</a>
+        <% } %>
+      </div>
+    </div>
+    <br />
   </body>
   <%- include('footer') %> <%- include('scripts') %>
 </html>
