@@ -9,27 +9,44 @@
     <div style="text-align: center">
       <h1 class="text-7xl font-bold" style="text-align: center">Manage</h1>
       <br />
-      <p class="text-3xl font-light mb-20" style="text-align: center">
+      <p class="text-3xl font-light mb-10" style="text-align: center">
         View a specific employee's information from this page.
       </p>
       <h2 class="text-3xl font-light mb-10" style="text-align: center">
-        <%= employee[0].lastName %>
+        Employee Details
       </h2>
-      <div>
-        <div class="form-group">
-          <label for="firstName">First Name:</label>
-          <input
-            type="text"
-            class="border py-1"
-            id="firstName"
-            readonly
-            value="<%= employee[0].firstName %>"
-          />
-        </div>
+
+      <div class="mb-2">
+        <label for="firstName"><b>First Name:</b></label>
+        <input
+          type="text"
+          class="border py-1"
+          id="firstName"
+          readonly
+          value="<%= employee[0].firstName %>"
+        />
       </div>
+
+      <div>
+        <label for="firstName"><b>Last Name:</b></label>
+        <input
+          type="text"
+          class="border py-1"
+          id="lastName"
+          readonly
+          value="<%= employee[0].lastName %>"
+        />
+      </div>
+
       <br /><br />
-      <a href="/list">&larr; OK</a>
+      <a href="/list"
+        ><button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-40"
+        >
+          BACK
+        </button></a
+      >
     </div>
-    <%- include ('scripts') %>
+    <%- include('footer') %> <%- include ('scripts') %>
   </body>
 </html>
