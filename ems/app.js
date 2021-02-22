@@ -3,8 +3,8 @@
 ; Title: Employee Management Assignment
 ; Author: Kevin Jones
 ; Date: 26 January 2021 - Until complete
-; Description: This exercise is UI Development
-; for the Employee Records application
+; Description: Full stack Employee Records
+; app using MongoDB, Express & Node.js
 ; ========================================
 */
 
