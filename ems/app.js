@@ -26,7 +26,9 @@ const csrfProtection = csrf({ cookie: true });
 // Connect to MongoDB
 var mongoDB = "mongodb://localhost:27017/test";
 mongoose.connect(mongoDB, {
-  useMongoClient: true,
+  //useMongoClient: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
 mongoose.Promise = global.Promise;
