@@ -19,6 +19,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const csrf = require("csurf");
 const Employee = require("./models/employee");
+const favicon = require("express-favicon");
 
 // Setup csrf protection
 const csrfProtection = csrf({ cookie: true });
@@ -44,6 +45,7 @@ const app = express();
 // Use statements
 app.use(helmet.xssFilter());
 app.use(logger("short"));
+app.use(favicon(__dirname + "/public/favicon.ico"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(csrfProtection);
