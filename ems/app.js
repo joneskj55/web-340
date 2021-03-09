@@ -117,7 +117,7 @@ app.post("/process", function (request, response) {
       throw err;
     } else {
       console.log(employeeName + " saved successfully!");
-      response.redirect("/");
+      response.redirect("/list");
     }
   });
 });
