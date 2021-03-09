@@ -108,6 +108,7 @@ app.post("/process", function (request, response) {
   const employee = new Employee({
     firstName: request.body.firstName,
     lastName: request.body.lastName,
+    position: request.body.position,
   });
 
   // save

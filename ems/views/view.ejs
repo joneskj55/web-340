@@ -27,7 +27,7 @@
         />
       </div>
 
-      <div>
+      <div class="mb-2">
         <label for="firstName"><b>Last Name:</b></label>
         <input
           type="text"
@@ -37,6 +37,19 @@
           value="<%= employee[0].lastName %>"
         />
       </div>
+
+      <div>
+        <label for="position"><b>Position:</b></label>
+        <input
+          type="text"
+          class="border py-1"
+          id="position"
+          readonly
+          value="<%= employee[0].position %>"
+        />
+      </div>
+
+
 
       <br /><br />
       <a href="/list"
