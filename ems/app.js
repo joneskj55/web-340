@@ -68,7 +68,7 @@ app.set("port", process.env.PORT || 3000);
 // Handle the response to the index page
 app.get("/", function (request, response) {
   response.render("index", {
-    title: "Home Page",
+    title: "Employee Management System",
     message: "XSS Prevention Example",
   });
 });
@@ -135,7 +135,7 @@ app.get("/view/:queryName", function (req, res) {
 
       if (employees.length > 0) {
         res.render("view", {
-          title: "Manage",
+          title: "Employee Details",
           employee: employees,
         });
       }
