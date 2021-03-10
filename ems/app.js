@@ -135,7 +135,7 @@ app.get("/view/:queryName", function (req, res) {
 
       if (employees.length > 0) {
         res.render("view", {
-          title: "Employee Details",
+          title: "Employee Details | " + queryName,
           employee: employees,
         });
       }
