@@ -2,9 +2,9 @@
 <html lang="en">
   <%- include ('header') %>
 
-  <body>
+  <body class="flex flex-col min-h-screen">
     <%- include ('navbar') %>
-
+<main class="flex-grow mb-20">
     <!-- Read-only page with the selected employee’s details -->
     <div class="text-center"">
       <h1 class="text-5xl md:text-7xl font-bold text-center">Employee Details</h1>
@@ -37,12 +37,13 @@
       <br /><br />
       <a href="/list"
         ><button
-          class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-80"
+          class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
         >
           BACK
         </button></a
       >
     </div>
-    <%- include('footer') %> <%- include ('scripts') %>
+</main>
   </body>
+  <%- include('footer') %> <%- include ('scripts') %>
 </html>
