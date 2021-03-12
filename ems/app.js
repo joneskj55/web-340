@@ -109,6 +109,8 @@ app.post("/process", function (request, response) {
     firstName: request.body.firstName,
     lastName: request.body.lastName,
     position: request.body.position,
+    department: request.body.department,
+    location: request.body.location,
   });
 
   // save
