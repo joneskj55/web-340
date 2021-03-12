@@ -7,10 +7,10 @@
 <main class="flex-grow mb-20">
     <!-- Read-only page with the selected employee’s details -->
     <div class="text-center"">
-      <h1 class="text-5xl md:text-7xl font-bold text-center">Employee Details</h1>
+      <h1 class="text-5xl md:text-7xl font-bold text-center"><%= employee[0].firstName %> <%= employee[0].lastName %></h1>
       <br />
       <h2 class="text-3xl font-light mb-10 text-center">
-        <%= employee[0].firstName %> <%= employee[0].lastName %>
+        Employee Details
       </h2>
       <div class="flex flex-col w-1/2 mx-auto h-full p-4 w-full md:w-3/5">
       <div class="rounded overflow-hidden border">
