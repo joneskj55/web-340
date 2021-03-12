@@ -18,7 +18,9 @@ let employeeSchema = new Schema({
   lastName: { type: String, required: true },
   position: { type: String, required: true },
   department: { type: String, required: true },
-  location: { type: String, required: true },
+  city: { type: String, required: true },
+  state: { type: String, required: true },
+  salary: { type: String, required: true },
 });
 
 // Export the model; Define the model

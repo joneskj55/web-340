@@ -110,7 +110,9 @@ app.post("/process", function (request, response) {
     lastName: request.body.lastName,
     position: request.body.position,
     department: request.body.department,
-    location: request.body.location,
+    city: request.body.city,
+    state: request.body.state,
+    salary: request.body.salary,
   });
 
   // save
